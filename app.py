@@ -7,7 +7,7 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Dash Template'
+tabtitle = 'Project2 Template'
 sourceurl = 'https://plot.ly/python/choropleth-maps/'
 githublink = 'https://github.com/austinlasseter/dash-template'
 
@@ -21,7 +21,7 @@ app.title=tabtitle
 
 app.layout = html.Div(children=[
     html.H1('This is the title'),
-    html.Div(children=['Stuff will go here']),
+    html.Div(children=['Cool stuff will go here']),
     html.A('Code on Github', href=githublink),
     html.Br(),
     html.A("Data Source", href=sourceurl),
