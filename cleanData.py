@@ -194,7 +194,7 @@ df.to_csv(Path.joinpath(Path.cwd(),'data','pctChangeGDP.csv'), index = False)
 
 # ## Unemployment Data
 
-# In[20]:
+# In[27]:
 
 
 dataPath = Path.joinpath(Path.cwd(),'data','unemployment.csv')
@@ -202,21 +202,14 @@ df = pd.read_csv(dataPath)
 df.sample(3)
 
 
-# In[21]:
+# In[28]:
 
 
 # rename GeoName to State
 df.rename(columns={'Stata':'State'}, inplace=True)
 
 
-# In[22]:
-
-
-# drop unneeded columns
-df = safeDrop(df, ['FIPS','PercentOfPopulation','PercentOfLaborEmp','PercentOfLaborUnemp'])
-
-
-# In[23]:
+# In[29]:
 
 
 # get abbreviations
@@ -227,13 +220,29 @@ dropIndex = df.loc[df['Abrv']==''].index
 df.drop(dropIndex, inplace=True)
 
 
-# In[24]:
+# In[30]:
+
+
+for col in ['Unemployed','Employed','LaborForce','Population']:
+    if col in list(df.columns):
+        df['UnemploymentRate'] = df['Unemployed'].div(df['Employed'])
+        df['LaborRate'] = df['LaborForce'].div(df['Population'])
+
+
+# In[33]:
+
+
+# drop unneeded columns
+df = safeDrop(df, ['FIPS','PercentOfPopulation','PercentOfLaborEmp','PercentOfLaborUnemp','Population','LaborForce','Employed','Unemployed'])
+
+
+# In[34]:
 
 
 df.sample(3)
 
 
-# In[ ]:
+# In[35]:
 
 
 # Un-pivoting
