@@ -10,7 +10,6 @@ Montana,MT,1964,2.5
 New Mexico,NM,1964,4.2
 New York,NY,1964,6.9
 North Dakota,ND,1964,-2.0
-Ohio,OH,1964,7.2
 Texas,TX,1964,7.2
 Vermont,VT,1964,9.7
 Washington,WA,1964,2.0
@@ -25,7 +24,6 @@ Montana,MT,1965,7.6
 New Mexico,NM,1965,4.9
 New York,NY,1965,6.4
 North Dakota,ND,1965,14.7
-Ohio,OH,1965,9.6
 Texas,TX,1965,8.0
 Vermont,VT,1965,10.9
 Washington,WA,1965,8.2
@@ -40,7 +38,6 @@ Montana,MT,1966,7.8
 New Mexico,NM,1966,4.3
 New York,NY,1966,7.7
 North Dakota,ND,1966,1.2
-Ohio,OH,1966,9.2
 Texas,TX,1966,8.6
 Vermont,VT,1966,18.8
 Washington,WA,1966,15.7
@@ -55,7 +52,6 @@ Montana,MT,1967,0.6
 New Mexico,NM,1967,1.8
 New York,NY,1967,6.4
 North Dakota,ND,1967,1.5
-Ohio,OH,1967,4.1
 Texas,TX,1967,8.5
 Vermont,VT,1967,4.9
 Washington,WA,1967,9.7
@@ -70,7 +66,6 @@ Montana,MT,1968,7.1
 New Mexico,NM,1968,8.3
 New York,NY,1968,8.4
 North Dakota,ND,1968,4.5
-Ohio,OH,1968,9.6
 Texas,TX,1968,11.5
 Vermont,VT,1968,8.2
 Washington,WA,1968,8.7
@@ -85,7 +80,6 @@ Montana,MT,1969,9.1
 New Mexico,NM,1969,7.5
 New York,NY,1969,7.2
 North Dakota,ND,1969,11.2
-Ohio,OH,1969,8.5
 Texas,TX,1969,9.2
 Vermont,VT,1969,10.5
 Washington,WA,1969,6.3
@@ -100,7 +94,6 @@ Montana,MT,1970,5.7
 New Mexico,NM,1970,8.3
 New York,NY,1970,5.0
 North Dakota,ND,1970,5.3
-Ohio,OH,1970,1.7
 Texas,TX,1970,7.7
 Vermont,VT,1970,10.1
 Washington,WA,1970,0.1
@@ -115,7 +108,6 @@ Montana,MT,1971,7.7
 New Mexico,NM,1971,8.8
 New York,NY,1971,6.0
 North Dakota,ND,1971,14.7
-Ohio,OH,1971,7.9
 Texas,TX,1971,9.6
 Vermont,VT,1971,7.2
 Washington,WA,1971,3.6
@@ -130,7 +122,6 @@ Montana,MT,1972,16.5
 New Mexico,NM,1972,12.1
 New York,NY,1972,6.8
 North Dakota,ND,1972,17.0
-Ohio,OH,1972,8.6
 Texas,TX,1972,11.6
 Vermont,VT,1972,8.1
 Washington,WA,1972,9.2
@@ -145,7 +136,6 @@ Montana,MT,1973,18.6
 New Mexico,NM,1973,14.5
 New York,NY,1973,7.2
 North Dakota,ND,1973,43.1
-Ohio,OH,1973,11.0
 Texas,TX,1973,15.3
 Vermont,VT,1973,8.2
 Washington,WA,1973,14.0
@@ -160,7 +150,6 @@ Montana,MT,1974,7.4
 New Mexico,NM,1974,15.0
 New York,NY,1974,6.6
 North Dakota,ND,1974,2.3
-Ohio,OH,1974,6.3
 Texas,TX,1974,15.6
 Vermont,VT,1974,3.8
 Washington,WA,1974,12.4
@@ -175,7 +164,6 @@ Montana,MT,1975,12.0
 New Mexico,NM,1975,13.8
 New York,NY,1975,6.8
 North Dakota,ND,1975,8.1
-Ohio,OH,1975,5.3
 Texas,TX,1975,15.7
 Vermont,VT,1975,8.9
 Washington,WA,1975,11.6
@@ -190,7 +178,6 @@ Montana,MT,1976,15.6
 New Mexico,NM,1976,14.3
 New York,NY,1976,5.2
 North Dakota,ND,1976,3.8
-Ohio,OH,1976,11.9
 Texas,TX,1976,15.1
 Vermont,VT,1976,14.8
 Washington,WA,1976,11.8
@@ -205,7 +192,6 @@ Montana,MT,1977,5.3
 New Mexico,NM,1977,9.2
 New York,NY,1977,10.2
 North Dakota,ND,1977,3.8
-Ohio,OH,1977,11.0
 Texas,TX,1977,14.6
 Vermont,VT,1977,3.9
 Washington,WA,1977,12.5
@@ -220,7 +206,6 @@ Montana,MT,1978,17.2
 New Mexico,NM,1978,14.2
 New York,NY,1978,11.2
 North Dakota,ND,1978,22.4
-Ohio,OH,1978,10.9
 Texas,TX,1978,14.3
 Vermont,VT,1978,17.8
 Washington,WA,1978,15.9
@@ -235,7 +220,6 @@ Montana,MT,1979,9.8
 New Mexico,NM,1979,13.9
 New York,NY,1979,8.8
 North Dakota,ND,1979,12.5
-Ohio,OH,1979,8.9
 Texas,TX,1979,15.1
 Vermont,VT,1979,11.6
 Washington,WA,1979,14.2
@@ -250,7 +234,6 @@ Montana,MT,1980,9.2
 New Mexico,NM,1980,19.7
 New York,NY,1980,8.3
 North Dakota,ND,1980,5.9
-Ohio,OH,1980,3.5
 Texas,TX,1980,18.3
 Vermont,VT,1980,10.4
 Washington,WA,1980,8.1
@@ -265,7 +248,6 @@ Montana,MT,1981,14.3
 New Mexico,NM,1981,17.7
 New York,NY,1981,11.1
 North Dakota,ND,1981,30.2
-Ohio,OH,1981,9.5
 Texas,TX,1981,20.8
 Vermont,VT,1981,11.9
 Washington,WA,1981,11.8
@@ -280,7 +262,6 @@ Montana,MT,1982,0.1
 New Mexico,NM,1982,3.9
 New York,NY,1982,7.8
 North Dakota,ND,1982,0.0
-Ohio,OH,1982,1.4
 Texas,TX,1982,6.1
 Vermont,VT,1982,5.9
 Washington,WA,1982,6.8
@@ -295,7 +276,6 @@ Montana,MT,1983,3.7
 New Mexico,NM,1983,3.3
 New York,NY,1983,8.2
 North Dakota,ND,1983,0.9
-Ohio,OH,1983,7.6
 Texas,TX,1983,1.8
 Vermont,VT,1983,8.9
 Washington,WA,1983,8.0
@@ -310,7 +290,6 @@ Montana,MT,1984,4.0
 New Mexico,NM,1984,7.6
 New York,NY,1984,11.2
 North Dakota,ND,1984,5.9
-Ohio,OH,1984,13.1
 Texas,TX,1984,9.0
 Vermont,VT,1984,10.0
 Washington,WA,1984,9.2
@@ -325,7 +304,6 @@ Montana,MT,1985,-0.6
 New Mexico,NM,1985,5.3
 New York,NY,1985,7.3
 North Dakota,ND,1985,0.1
-Ohio,OH,1985,6.3
 Texas,TX,1985,6.4
 Vermont,VT,1985,9.1
 Washington,WA,1985,4.3
@@ -340,7 +318,6 @@ Montana,MT,1986,0.3
 New Mexico,NM,1986,-3.2
 New York,NY,1986,7.1
 North Dakota,ND,1986,-8.3
-Ohio,OH,1986,4.9
 Texas,TX,1986,-3.7
 Vermont,VT,1986,8.6
 Washington,WA,1986,8.6
@@ -355,7 +332,6 @@ Montana,MT,1987,3.7
 New Mexico,NM,1987,2.9
 New York,NY,1987,7.2
 North Dakota,ND,1987,5.4
-Ohio,OH,1987,5.0
 Texas,TX,1987,1.7
 Vermont,VT,1987,12.1
 Washington,WA,1987,7.5
@@ -370,7 +346,6 @@ Montana,MT,1988,2.8
 New Mexico,NM,1988,4.6
 New York,NY,1988,9.1
 North Dakota,ND,1988,-5.4
-Ohio,OH,1988,7.1
 Texas,TX,1988,8.9
 Vermont,VT,1988,12.0
 Washington,WA,1988,9.7
@@ -385,7 +360,6 @@ Montana,MT,1989,7.9
 New Mexico,NM,1989,6.3
 New York,NY,1989,3.7
 North Dakota,ND,1989,10.1
-Ohio,OH,1989,6.1
 Texas,TX,1989,6.9
 Vermont,VT,1989,8.4
 Washington,WA,1989,9.1
@@ -400,7 +374,6 @@ Montana,MT,1990,4.8
 New Mexico,NM,1990,6.7
 New York,NY,1990,4.2
 North Dakota,ND,1990,7.3
-Ohio,OH,1990,4.4
 Texas,TX,1990,8.3
 Vermont,VT,1990,5.0
 Washington,WA,1990,9.8
@@ -415,7 +388,6 @@ Montana,MT,1991,4.8
 New Mexico,NM,1991,13.9
 New York,NY,1991,0.8
 North Dakota,ND,1991,1.6
-Ohio,OH,1991,2.9
 Texas,TX,1991,3.9
 Vermont,VT,1991,0.5
 Washington,WA,1991,6.1
@@ -430,7 +402,6 @@ Montana,MT,1992,7.7
 New Mexico,NM,1992,7.7
 New York,NY,1992,4.5
 North Dakota,ND,1992,10.3
-Ohio,OH,1992,7.1
 Texas,TX,1992,5.8
 Vermont,VT,1992,6.9
 Washington,WA,1992,6.8
@@ -445,7 +416,6 @@ Montana,MT,1993,7.5
 New Mexico,NM,1993,13.0
 New York,NY,1993,3.4
 North Dakota,ND,1993,1.2
-Ohio,OH,1993,3.6
 Texas,TX,1993,6.6
 Vermont,VT,1993,3.9
 Washington,WA,1993,6.0
@@ -460,7 +430,6 @@ Montana,MT,1994,6.3
 New Mexico,NM,1994,13.0
 New York,NY,1994,3.3
 North Dakota,ND,1994,9.6
-Ohio,OH,1994,8.6
 Texas,TX,1994,7.3
 Vermont,VT,1994,5.1
 Washington,WA,1994,5.8
@@ -475,7 +444,6 @@ Montana,MT,1995,2.7
 New Mexico,NM,1995,1.1
 New York,NY,1995,4.9
 North Dakota,ND,1995,3.8
-Ohio,OH,1995,5.5
 Texas,TX,1995,6.7
 Vermont,VT,1995,1.5
 Washington,WA,1995,2.8
@@ -490,7 +458,6 @@ Montana,MT,1996,3.4
 New Mexico,NM,1996,5.7
 New York,NY,1996,6.4
 North Dakota,ND,1996,11.1
-Ohio,OH,1996,4.6
 Texas,TX,1996,8.6
 Vermont,VT,1996,5.6
 Washington,WA,1996,7.4
@@ -505,7 +472,6 @@ Montana,MT,1997,4.5
 New Mexico,NM,1997,9.3
 New York,NY,1997,7.2
 North Dakota,ND,1997,0.1
-Ohio,OH,1997,6.9
 Texas,TX,1997,10.1
 Vermont,VT,1997,5.8
 Washington,WA,1997,7.9
@@ -520,7 +486,6 @@ Montana,MT,1998,5.9
 New Mexico,NM,1998,-3.5
 New York,NY,1998,3.7
 North Dakota,ND,1998,6.8
-Ohio,OH,1998,5.3
 Texas,TX,1998,5.8
 Vermont,VT,1998,4.3
 Washington,WA,1998,8.4
@@ -535,7 +500,6 @@ Montana,MT,1999,1.9
 New Mexico,NM,1999,4.8
 New York,NY,1999,6.5
 North Dakota,ND,1999,1.1
-Ohio,OH,1999,4.0
 Texas,TX,1999,5.5
 Vermont,VT,1999,6.8
 Washington,WA,1999,9.7
@@ -550,7 +514,6 @@ Montana,MT,2000,5.1
 New Mexico,NM,2000,4.0
 New York,NY,2000,5.7
 North Dakota,ND,2000,5.8
-Ohio,OH,2000,4.0
 Texas,TX,2000,8.4
 Vermont,VT,2000,6.7
 Washington,WA,2000,3.2
@@ -565,7 +528,6 @@ Montana,MT,2001,4.4
 New Mexico,NM,2001,1.4
 New York,NY,2001,4.6
 North Dakota,ND,2001,5.2
-Ohio,OH,2001,1.1
 Texas,TX,2001,4.6
 Vermont,VT,2001,5.3
 Washington,WA,2001,0.7
@@ -580,7 +542,6 @@ Montana,MT,2002,4.5
 New Mexico,NM,2002,3.7
 New York,NY,2002,1.1
 North Dakota,ND,2002,6.8
-Ohio,OH,2002,4.1
 Texas,TX,2002,1.8
 Vermont,VT,2002,4.6
 Washington,WA,2002,3.7
@@ -595,7 +556,6 @@ Montana,MT,2003,7.4
 New Mexico,NM,2003,8.3
 New York,NY,2003,2.1
 North Dakota,ND,2003,9.2
-Ohio,OH,2003,3.1
 Texas,TX,2003,5.4
 Vermont,VT,2003,4.8
 Washington,WA,2003,4.1
@@ -610,7 +570,6 @@ Montana,MT,2004,9.0
 New Mexico,NM,2004,10.9
 New York,NY,2004,5.5
 North Dakota,ND,2004,4.9
-Ohio,OH,2004,4.9
 Texas,TX,2004,9.2
 Vermont,VT,2004,7.3
 Washington,WA,2004,4.6
@@ -625,7 +584,6 @@ Montana,MT,2005,9.3
 New Mexico,NM,2005,5.7
 New York,NY,2005,6.3
 North Dakota,ND,2005,5.4
-Ohio,OH,2005,4.5
 Texas,TX,2005,8.8
 Vermont,VT,2005,3.7
 Washington,WA,2005,9.6
@@ -640,7 +598,6 @@ Montana,MT,2006,7.9
 New Mexico,NM,2006,5.1
 New York,NY,2006,5.6
 North Dakota,ND,2006,7.0
-Ohio,OH,2006,2.4
 Texas,TX,2006,10.0
 Vermont,VT,2006,3.4
 Washington,WA,2006,7.1
@@ -655,7 +612,6 @@ Montana,MT,2007,9.5
 New Mexico,NM,2007,4.1
 New York,NY,2007,3.5
 North Dakota,ND,2007,9.8
-Ohio,OH,2007,2.9
 Texas,TX,2007,8.6
 Vermont,VT,2007,1.6
 Washington,WA,2007,9.2
@@ -670,7 +626,6 @@ Montana,MT,2008,2.2
 New Mexico,NM,2008,3.9
 New York,NY,2008,-0.9
 North Dakota,ND,2008,10.6
-Ohio,OH,2008,1.0
 Texas,TX,2008,5.0
 Vermont,VT,2008,4.0
 Washington,WA,2008,2.7
@@ -685,7 +640,6 @@ Montana,MT,2009,-2.4
 New Mexico,NM,2009,-2.0
 New York,NY,2009,4.9
 North Dakota,ND,2009,0.9
-Ohio,OH,2009,-3.1
 Texas,TX,2009,-6.0
 Vermont,VT,2009,0.7
 Washington,WA,2009,-0.6
@@ -700,7 +654,6 @@ Montana,MT,2010,5.8
 New Mexico,NM,2010,2.4
 New York,NY,2010,5.3
 North Dakota,ND,2010,10.7
-Ohio,OH,2010,3.5
 Texas,TX,2010,6.3
 Vermont,VT,2010,4.8
 Washington,WA,2010,3.4
@@ -715,7 +668,6 @@ Montana,MT,2011,6.6
 New Mexico,NM,2011,3.1
 New York,NY,2011,1.8
 North Dakota,ND,2011,16.2
-Ohio,OH,2011,5.7
 Texas,TX,2011,7.6
 Vermont,VT,2011,3.8
 Washington,WA,2011,3.8
@@ -730,7 +682,6 @@ Montana,MT,2012,3.5
 New Mexico,NM,2012,1.1
 New York,NY,2012,7.0
 North Dakota,ND,2012,24.7
-Ohio,OH,2012,2.9
 Texas,TX,2012,6.0
 Vermont,VT,2012,2.7
 Washington,WA,2012,5.6
@@ -745,7 +696,6 @@ Montana,MT,2013,2.7
 New Mexico,NM,2013,0.9
 New York,NY,2013,2.5
 North Dakota,ND,2013,4.9
-Ohio,OH,2013,3.7
 Texas,TX,2013,6.4
 Vermont,VT,2013,0.7
 Washington,WA,2013,4.6
@@ -760,7 +710,6 @@ Montana,MT,2014,3.2
 New Mexico,NM,2014,4.6
 New York,NY,2014,5.3
 North Dakota,ND,2014,8.7
-Ohio,OH,2014,5.7
 Texas,TX,2014,4.2
 Vermont,VT,2014,2.1
 Washington,WA,2014,5.5
@@ -775,7 +724,6 @@ Montana,MT,2015,3.7
 New Mexico,NM,2015,-1.7
 New York,NY,2015,4.2
 North Dakota,ND,2015,-6.2
-Ohio,OH,2015,2.8
 Texas,TX,2015,0.2
 Vermont,VT,2015,3.3
 Washington,WA,2015,6.4
@@ -790,7 +738,6 @@ Montana,MT,2016,-1.4
 New Mexico,NM,2016,0.1
 New York,NY,2016,3.6
 North Dakota,ND,2016,-7.6
-Ohio,OH,2016,1.9
 Texas,TX,2016,-0.2
 Vermont,VT,2016,3.0
 Washington,WA,2016,4.8
@@ -805,7 +752,6 @@ Montana,MT,2017,3.3
 New Mexico,NM,2017,3.6
 New York,NY,2017,3.7
 North Dakota,ND,2017,1.7
-Ohio,OH,2017,3.9
 Texas,TX,2017,5.8
 Vermont,VT,2017,3.1
 Washington,WA,2017,6.0
@@ -820,7 +766,6 @@ Montana,MT,2018,4.0
 New Mexico,NM,2018,5.5
 New York,NY,2018,4.9
 North Dakota,ND,2018,6.0
-Ohio,OH,2018,4.7
 Texas,TX,2018,7.3
 Vermont,VT,2018,3.4
 Washington,WA,2018,7.8
