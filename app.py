@@ -7,7 +7,7 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Project 2'
+tabtitle = 'Border Crossing v. GDP'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#D3D3D3'
