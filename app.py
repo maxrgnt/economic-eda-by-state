@@ -8,8 +8,8 @@ import pandas as pd
 ########### Define a few variables ######
 
 tabtitle = 'Project 2'
-sourceurl = 'https://plot.ly/python/choropleth-maps/'
-githublink = 'https://github.com/austinlasseter/dash-template'
+sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
+githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#D3D3D3'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
@@ -32,15 +32,15 @@ abrvDict = {'AL':'Alaska',
             'WA':'Washington'}
 
 ########### Figure
-def getFig(value):
+def getFig(value, cols, colors):
     figDF = df[df['Abrv']==value]
     data = []
-    for col in ['gdp','labor','unemp','border']:
+    for i, col in enumerate(cols):
         trace = go.Scatter(
             x = figDF['Year'],
             y = figDF[col],
             mode = 'lines+markers',
-            # marker = {'color': color1},
+            marker = {'color': colors[i]},
             name = col
         )
         data.append(trace)
@@ -66,11 +66,13 @@ app.title=tabtitle
 ########### Layout
 app.layout = html.Div(children=[
     html.H1(f'df shape: {df.shape}'),
-    # html.Div(children=['Cool stuff will go here']),
+    html.Div(children=['labor: percent change in labor force (percentage of population able to work)']),
+    html.Div(children=['unemp: percent change in unemployment rate (percentage of labor force not working)']),
+    html.Div(children=['border: percent change in individuals crossing the border']),
     html.Div(
         dcc.Graph(
-            id='dataByState',
-            figure=getFig('TX')
+            id='popByState',
+            figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
         ),
         style={'width': '69%', 'display': 'inline-block'}#, 'height':'50vh'}
     ),
@@ -80,6 +82,14 @@ app.layout = html.Div(children=[
                 value='TX'
                 ),
         style={'width': '29%', 'display': 'inline-block', 'height':'50vh'}
+    ),
+    html.Div(children=['gdp: percent change in gdp']),
+    html.Div(
+        dcc.Graph(
+            id='gdpByState',
+            figure=getFig('TX', ['gdp'],['#586BA4'])
+        ),
+        style={'width': '69%', 'display': 'inline-block'}#, 'height':'50vh'}
     ),
     html.Br(),
     html.A('Code on Github', href=githublink),
@@ -92,7 +102,7 @@ app.layout = html.Div(children=[
 )
 
 ############ Callbacks
-@app.callback(Output('dataByState', 'figure'),
+@app.callback([Output('gdpByState', 'figure'), Output('popByState', 'figure')],
              [Input('dropdown', 'value')])
 def updateFigWith(value):
     toReturn = ''
@@ -100,7 +110,7 @@ def updateFigWith(value):
         toReturn = value
     else:
         value = 'TX'
-    return getFig(value)
+    return getFig(value,['gdp'],['#586BA4']), getFig(value,['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
 
 ############ Deploy
 if __name__ == '__main__':
