@@ -16,6 +16,8 @@ url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/ma
 df = pd.read_csv(url)
 cols = list(df['Abrv'].unique())
 
+pagetitle = f'Border Crossing v. GDP from {df["Year"].min()} to {df["Year"].max()}'
+
 abrvDict = {'AL':'Alaska',
             'AZ':'Arizona',
             'CA':'California',
@@ -65,7 +67,7 @@ app.title=tabtitle
 
 ########### Layout
 app.layout = html.Div(children=[
-    html.H1(f'df shape: {df.shape}'),
+    html.H1(pagetitle),
     html.Div(children=['labor: percent change in labor force (percentage of population able to work)']),
     html.Div(children=['unemp: percent change in unemployment rate (percentage of labor force not working)']),
     html.Div(children=['border: percent change in individuals crossing the border']),
