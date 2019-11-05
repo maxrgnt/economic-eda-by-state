@@ -26,14 +26,23 @@ def getFig(value, cols, colors):
     for i, col in enumerate(cols):
         trace = go.Scatter(
             x = figDF['Year'],
-            y = figDF[col],
+            y = figDF[col]/100,
             mode = 'lines+markers',
             marker = {'color': colors[i]},
             name = col
         )
         data.append(trace)
     layout = go.Layout(
-#        autosize = True,
+        autosize = True,
+        showlegend = True,
+        xaxis = go.layout.XAxis(
+           tickmode = 'linear',
+           tick0 = figDF['Year'].min(),
+           dtick = 1
+        ),
+        yaxis = go.layout.YAxis(
+            tickformat = ',.0%'
+        ),
         title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
         hovermode = 'closest',
         paper_bgcolor = bgColor,
@@ -62,35 +71,39 @@ app.layout = html.Div(children=[
         html.Div(
             dcc.Graph(
                 id='popByState',
-                figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
+#                figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
             ),
-            style={'width': '59%'},
+            style={'width': '64%'},
             className = "six columns"
         ),
         html.Div([
             dcc.RadioItems(
                 id = 'radio',
                 options=[{'label': i, 'value': i} for i in borders],
-                labelStyle={'display': 'inline-block', 'left-margin': '20px'},
-                value='US-Mexico Border'
+                labelStyle={'display': 'inline-block'},# 'left-margin': '20px'},
+                value=borders[0]
             ),
             dcc.Dropdown(id='dropDown',
-                options=[{'label': i, 'value': i} for i in cols],
-                value='TX'
+                options=[{'label': i, 'value': i} for i in cols]
+#                value='TX'
             ),
         ],
-        style={'width': '29%'},
+        style={'width': '24%'},
         className = "six columns"),
     ], className = "row"),
 #
     html.Div(children=['gdp: percent change in gdp']),
-    html.Div(
-        dcc.Graph(
-            id='gdpByState',
-            figure=getFig('TX', ['gdp'],['#586BA4'])
-        ),
-        style={'width': '59%', 'display': 'inline-block'}#, 'height':'50vh'}
-    ),
+#
+    html.Div([
+        html.Div(
+            dcc.Graph(
+                id='gdpByState',
+#                figure=getFig('TX', ['gdp'],['#586BA4'])
+            ),
+            style={'width': '64%'}, #, 'display': 'inline-block'}#, 'height':'50vh'}
+            className = "six columns"),
+    ], className = "row"),
+#
     html.Br(),
     html.A('Code on Github', href=githublink),
     html.Br(),
