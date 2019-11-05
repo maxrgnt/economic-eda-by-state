@@ -63,44 +63,44 @@ app.title=tabtitle
 ########### Layout
 app.layout = html.Div(children=[
     html.H1(pagetitle),
-    html.Div(children=['labor: percent change in labor force (percentage of population able to work)']),
-    html.Div(children=['unemp: percent change in unemployment rate (percentage of labor force not working)']),
+    html.Div(children=['labor:  percent change in labor force (percentage of population able to work)']),
+    html.Div(children=['unemp:  percent change in unemployment rate (percentage of labor force not working)']),
     html.Div(children=['border: percent change in individuals crossing the border']),
+    html.Div(children=['gdp:    percent change in gdp']),
+    html.Br(),
+#
+    html.Div([
+        html.Div([
+            dcc.RadioItems(
+                id = 'radio',
+                options=[{'label': i, 'value': i} for i in borders],
+                labelStyle={'display': 'inline-block'},
+                value=borders[0]
+            ),
+            html.Br(),
+            dcc.Dropdown(id='dropDown',
+                options=[{'label': i, 'value': i} for i in cols]
+            ),
+        ],
+        style={'width': '24%'},
+        className = "twelve columns"),
+    ], className = "row"),
+#
+    html.Br(),
 #
     html.Div([
         html.Div(
             dcc.Graph(
                 id='popByState',
-#                figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
             ),
-            style={'width': '64%'},
+            style={'width': '45%'},
             className = "six columns"
         ),
-        html.Div([
-            dcc.RadioItems(
-                id = 'radio',
-                options=[{'label': i, 'value': i} for i in borders],
-                labelStyle={'display': 'inline-block'},# 'left-margin': '20px'},
-                value=borders[0]
-            ),
-            dcc.Dropdown(id='dropDown',
-                options=[{'label': i, 'value': i} for i in cols]
-#                value='TX'
-            ),
-        ],
-        style={'width': '24%'},
-        className = "six columns"),
-    ], className = "row"),
-#
-    html.Div(children=['gdp: percent change in gdp']),
-#
-    html.Div([
         html.Div(
             dcc.Graph(
                 id='gdpByState',
-#                figure=getFig('TX', ['gdp'],['#586BA4'])
             ),
-            style={'width': '64%'}, #, 'display': 'inline-block'}#, 'height':'50vh'}
+            style={'width': '45%'},
             className = "six columns"),
     ], className = "row"),
 #
@@ -123,17 +123,14 @@ def updateFigWith(value):
         toReturn = value
     else:
         value = 'TX'
-    figs = (getFig(value,['gdp'],['#586BA4']),
-            getFig(value,['labor','unemp','border'],['#67597A','#963D5A','#23CE6B']))
+    figs = (getFig(value,['gdp','border'],['#586BA4','#CC5803']),
+            getFig(value,['labor','unemp'],['#67597A','#963D5A']))
     return figs
 
 @app.callback([Output('dropDown', 'options')],
              [Input('radio', 'value')])
 def updateDropDownOptions(value):
     newOptions = list(df[df['US_Border']==value]['Abrv'].unique())
-#    print([{'label': i, 'value': i} for i in newOptions])
-#    [{'label': 'AZ', 'value': 'AZ'}, {'label': 'CA', 'value': 'CA'},
-#        {'label': 'NM', 'value': 'NM'}, {'label': 'TX', 'value': 'TX'}]
     return [[{'label': i, 'value': i} for i in newOptions]]
 
 @app.callback([Output('dropDown', 'value'), Output('dropDown', 'placeholder')],
