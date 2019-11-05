@@ -15,23 +15,9 @@ bgColor = '#D3D3D3'
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
 cols = list(df['Abrv'].unique())
+borders = list(df['US_Border'].unique())
 
 pagetitle = f'Border Crossing v. GDP from {df["Year"].min()} to {df["Year"].max()}'
-
-abrvDict = {'AL':'Alaska',
-            'AZ':'Arizona',
-            'CA':'California',
-            'ID':'Idaho',
-            'ME':'Maine',
-            'MI':'Michigan',
-            'MN':'Minnesota',
-            'MT':'Montana',
-            'NM':'New Mexico',
-            'NY':'New York',
-            'ND':'North Dakota',
-            'TX':'Texas',
-            'VT':'Vermont',
-            'WA':'Washington'}
 
 ########### Figure
 def getFig(value, cols, colors):
@@ -47,8 +33,8 @@ def getFig(value, cols, colors):
         )
         data.append(trace)
     layout = go.Layout(
-        autosize = True,
-        title = f'{abrvDict[value]} Percent Change by Year',
+#        autosize = True,
+        title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
         hovermode = 'closest',
         paper_bgcolor = bgColor,
         plot_bgcolor = bgColor
@@ -71,27 +57,39 @@ app.layout = html.Div(children=[
     html.Div(children=['labor: percent change in labor force (percentage of population able to work)']),
     html.Div(children=['unemp: percent change in unemployment rate (percentage of labor force not working)']),
     html.Div(children=['border: percent change in individuals crossing the border']),
-    html.Div(
-        dcc.Graph(
-            id='popByState',
-            figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
+#
+    html.Div([
+        html.Div(
+            dcc.Graph(
+                id='popByState',
+                figure=getFig('TX', ['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
+            ),
+            style={'width': '59%'},
+            className = "six columns"
         ),
-        style={'width': '69%', 'display': 'inline-block'}#, 'height':'50vh'}
-    ),
-    html.Div(
-    dcc.Dropdown(id='dropdown',
+        html.Div([
+            dcc.RadioItems(
+                id = 'radio',
+                options=[{'label': i, 'value': i} for i in borders],
+                labelStyle={'display': 'inline-block', 'left-margin': '20px'},
+                value='US-Mexico Border'
+            ),
+            dcc.Dropdown(id='dropDown',
                 options=[{'label': i, 'value': i} for i in cols],
                 value='TX'
-                ),
-        style={'width': '29%', 'display': 'inline-block', 'height':'50vh'}
-    ),
+            ),
+        ],
+        style={'width': '29%'},
+        className = "six columns"),
+    ], className = "row"),
+#
     html.Div(children=['gdp: percent change in gdp']),
     html.Div(
         dcc.Graph(
             id='gdpByState',
             figure=getFig('TX', ['gdp'],['#586BA4'])
         ),
-        style={'width': '69%', 'display': 'inline-block'}#, 'height':'50vh'}
+        style={'width': '59%', 'display': 'inline-block'}#, 'height':'50vh'}
     ),
     html.Br(),
     html.A('Code on Github', href=githublink),
@@ -105,14 +103,30 @@ app.layout = html.Div(children=[
 
 ############ Callbacks
 @app.callback([Output('gdpByState', 'figure'), Output('popByState', 'figure')],
-             [Input('dropdown', 'value')])
+             [Input('dropDown', 'value')])
 def updateFigWith(value):
     toReturn = ''
     if value in cols:
         toReturn = value
     else:
         value = 'TX'
-    return getFig(value,['gdp'],['#586BA4']), getFig(value,['labor','unemp','border'],['#67597A','#963D5A','#23CE6B'])
+    figs = (getFig(value,['gdp'],['#586BA4']),
+            getFig(value,['labor','unemp','border'],['#67597A','#963D5A','#23CE6B']))
+    return figs
+
+@app.callback([Output('dropDown', 'options')],
+             [Input('radio', 'value')])
+def updateDropDownOptions(value):
+    newOptions = list(df[df['US_Border']==value]['Abrv'].unique())
+#    print([{'label': i, 'value': i} for i in newOptions])
+#    [{'label': 'AZ', 'value': 'AZ'}, {'label': 'CA', 'value': 'CA'},
+#        {'label': 'NM', 'value': 'NM'}, {'label': 'TX', 'value': 'TX'}]
+    return [[{'label': i, 'value': i} for i in newOptions]]
+
+@app.callback([Output('dropDown', 'value'), Output('dropDown', 'placeholder')],
+             [Input('dropDown', 'options')])
+def updateDropDownValue(availableOptions):
+    return availableOptions[0]['value'], availableOptions[0]['label']
 
 ############ Deploy
 if __name__ == '__main__':
