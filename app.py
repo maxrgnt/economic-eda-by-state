@@ -44,8 +44,9 @@ def getFig(value, cols, colors):
         yaxis = go.layout.YAxis(
             tickformat = ',.0%'
         ),
-        title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
-        hovermode = 'closest'
+        # title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
+        hovermode = 'closest',
+        margin=go.layout.Margin(l=10, r=0, t=0, b=10)
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
@@ -61,10 +62,14 @@ app.title=tabtitle
 ########### Layout
 app.layout = html.Div(children=[
     html.H1(pagetitle),
-    html.Div(children=['labor:  percent change in labor force (percentage of population able to work)']),
-    html.Div(children=['unemp:  percent change in unemployment rate (percentage of labor force not working)']),
-    html.Div(children=['border: percent change in individuals crossing the border']),
-    html.Div(children=['gdp:    percent change in gdp']),
+    html.Div([
+        dcc.Markdown('''
+            * **labor**:  percent change in labor force (percentage of population able to work)
+            * **unemp**:  percent change in unemployment rate (percentage of labor force not working)
+            * **border**: percent change in individuals crossing the border
+            * **gdp**:    percent change in gdp
+            ''')
+    ]),
     html.Br(),
 #
     html.Div([
@@ -99,14 +104,14 @@ app.layout = html.Div(children=[
             dcc.Graph(
                 id='popByState',
             ),
-            style={'width': '45%'},
+            style={'width': '46%'},
             className = "six columns"
         ),
         html.Div(
             dcc.Graph(
                 id='gdpByState',
             ),
-            style={'width': '45%'},
+            style={'width': '46%'},#, 'height': 150},
             className = "six columns"),
     ], className = "row"),
 #
