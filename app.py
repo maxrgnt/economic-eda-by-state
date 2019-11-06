@@ -55,8 +55,8 @@ def getFig(value, cols, colors):
 
 ########### Initiate the app
 external_stylesheets = [
-    'https://codepen.io/chriddyp/pen/bWLwgP.css',
-    'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/nomargin.css'
+    'https://codepen.io/chriddyp/pen/bWLwgP.css'
+    # 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/nomargin.css'
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
