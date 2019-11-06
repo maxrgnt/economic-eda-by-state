@@ -24,10 +24,10 @@ def getFig(value, cols, colors):
     figDF = df[df['State']==value]
     data = []
     for i, col in enumerate(cols):
-        trace = go.Bar(
+        trace = go.Scatter(
             x = figDF['Year'],
             y = figDF[col]/100,
-            # mode = 'lines+markers',
+            mode = 'lines+markers',
             marker = {'color': colors[i]},
             name = col
         )
