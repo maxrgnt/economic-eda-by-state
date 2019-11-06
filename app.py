@@ -104,7 +104,7 @@ app.layout = html.Div(children=[
             dcc.Graph(
                 id='popByState',
             ),
-            style={'width': '45%'},
+            style={'width': '45%', 'height': 300},
             className = "six columns"
         ),
         html.Div(
