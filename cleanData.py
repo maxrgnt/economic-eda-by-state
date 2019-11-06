@@ -3,7 +3,7 @@
 
 # <a href="https://colab.research.google.com/github/maxrgnt/pythdc2-project2/blob/master/Clean2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# In[2]:
+# In[1]:
 
 
 # Panel Data
@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 
 
-# In[1]:
+# In[2]:
 
 
 def abbreviate(stateName):
@@ -48,28 +48,28 @@ def safeDrop(df, cols):
 
 # ## Border Data
 
-# In[37]:
+# In[66]:
 
 
-dataPath = Path.joinpath(Path.cwd(),'data','borderCrossing.csv')
+dataPath = Path.joinpath(Path.cwd(),'sourceData','borderCrossing.csv')
 df = pd.read_csv(dataPath)
 df.sample(3)
 
 
-# In[38]:
+# In[67]:
 
 
 df['Measure'].value_counts()
 
 
-# In[39]:
+# In[68]:
 
 
 # Only interested in Passenger / Pedestrian crossings
 people = df['Measure'].str.contains('Passengers|Pedestrians', case = False)
 
 
-# In[40]:
+# In[69]:
 
 
 # Check to see how much data frame shrinks after filtering down
@@ -79,7 +79,7 @@ df = df.loc[people]
 print(f'Just people: {df.shape}')
 
 
-# In[41]:
+# In[70]:
 
 
 # Break out Location into latitude and longitude,
@@ -89,32 +89,21 @@ if 'Location' in df.columns:
     df['Longitude'] = df['Location'].str[len('POINT ('):-1].str.split(' ').str[0].astype(float)
 
 
-# In[42]:
-
-
-# drop unneeded rows
-# index of all rows where df['Year'] < 1996
-print(df.shape)
-dropIndex = df.loc[df['Year']>2018].index
-df.drop(dropIndex, inplace=True)
-print(df.shape)
-
-
-# In[43]:
+# In[71]:
 
 
 # Drop unnecessary columns
 df = safeDrop(df, ['Port Code','Port Name','Location','Unnamed: 0','index'])
 
 
-# In[44]:
+# In[72]:
 
 
 # Get state abrv
 df['Abrv'] = df['State'].apply(abbreviate)
 
 
-# In[47]:
+# In[73]:
 
 
 # Handle the Date column
@@ -123,14 +112,25 @@ if 'Date' in df.columns:
     df['Year'] = df['newDate'].dt.year.astype(int)
 
 
-# In[48]:
+# In[74]:
+
+
+# drop unneeded rows
+# index of all rows where df['Year'] < 1996
+print(df.shape)
+dropIndex = df.loc[df['Year'].astype(int)>2018].index
+df.drop(dropIndex, inplace=True)
+print(df.shape)
+
+
+# In[75]:
 
 
 # reorganize columns
 df = df[['Abrv','State','Longitude','Latitude','Border','Year','Measure','Value']]
 
 
-# In[50]:
+# In[76]:
 
 
 df.sample(5)
@@ -140,34 +140,34 @@ df.sample(5)
 
 
 # Remove non-pedestrian values to shrink file
-df.to_csv(Path.joinpath(Path.cwd(),'data','borderCrossing.csv'), index = False)
+# df.to_csv(Path.joinpath(Path.cwd(),'data','borderCrossing.csv'), index = False)
 
 
 # ## GDP Data
 
-# In[18]:
+# In[10]:
 
 
-dataPath = Path.joinpath(Path.cwd(),'data','pctChangeGDP.csv')
+dataPath = Path.joinpath(Path.cwd(),'sourceData','pctChangeGDP.csv')
 df = pd.read_csv(dataPath)
 df.sample(3)
 
 
-# In[19]:
+# In[11]:
 
 
 # rename GeoName to State
 df.rename(columns={'GeoName':'State'}, inplace=True)
 
 
-# In[20]:
+# In[12]:
 
 
 # Get state abrv
 df['Abrv'] = df['State'].apply(abbreviate)
 
 
-# In[21]:
+# In[15]:
 
 
 # drop unneeded rows\n",
@@ -178,62 +178,62 @@ df.drop(dropIndex, inplace=True)
 print(df.shape)
 
 
-# In[22]:
-
-
-# drop unneeded rows
-# index of all rows where df['Year'] < 1996
-print(df.shape)
-dropIndex = df.loc[df['Year']<1996].index
-df.drop(dropIndex, inplace=True)
-print(df.shape)
-
-
-# In[23]:
+# In[16]:
 
 
 # SAFE DROP
 df = safeDrop(df, ['GeoFips'])
 
 
-# In[24]:
+# In[17]:
 
 
 if 'Year' not in df.columns:
   df = pd.melt(df, id_vars=['State','Abrv'], var_name='Year', value_name = 'Value')
 
 
-# In[27]:
+# In[21]:
+
+
+# drop unneeded rows
+# index of all rows where df['Year'] < 1996
+print(df.shape)
+dropIndex = df.loc[df['Year'].astype(int)<1997].index
+df.drop(dropIndex, inplace=True)
+print(df.shape)
+
+
+# In[31]:
 
 
 df.sample(5)
 
 
-# In[28]:
+# In[13]:
 
 
 # Un-pivoting
-df.to_csv(Path.joinpath(Path.cwd(),'data','pctChangeGDP.csv'), index = False)
+# df.to_csv(Path.joinpath(Path.cwd(),'data','pctChangeGDP.csv'), index = False)
 
 
 # ## Unemployment Data
 
-# In[29]:
+# In[35]:
 
 
-dataPath = Path.joinpath(Path.cwd(),'data','unemployment.csv')
+dataPath = Path.joinpath(Path.cwd(),'sourceData','unemployment.csv')
 df = pd.read_csv(dataPath)
 df.sample(3)
 
 
-# In[30]:
+# In[36]:
 
 
 # rename GeoName to State
 df.rename(columns={'Stata':'State'}, inplace=True)
 
 
-# In[31]:
+# In[37]:
 
 
 # get abbreviations
@@ -246,7 +246,7 @@ df.drop(dropIndex, inplace=True)
 print(df.shape)
 
 
-# In[32]:
+# In[38]:
 
 
 # drop unneeded rows
@@ -257,7 +257,7 @@ df.drop(dropIndex, inplace=True)
 print(df.shape)
 
 
-# In[33]:
+# In[39]:
 
 
 for col in ['Unemployed','Employed','LaborForce','Population']:
@@ -266,14 +266,14 @@ for col in ['Unemployed','Employed','LaborForce','Population']:
         df['LaborRate'] = df['LaborForce'].div(df['Population'])
 
 
-# In[34]:
+# In[40]:
 
 
 # drop unneeded columns
 df = safeDrop(df, ['FIPS','PercentOfPopulation','PercentOfLaborEmp','PercentOfLaborUnemp','Population','LaborForce','Employed','Unemployed'])
 
 
-# In[35]:
+# In[41]:
 
 
 df.sample(3)
@@ -283,5 +283,5 @@ df.sample(3)
 
 
 # Un-pivoting
-df.to_csv(Path.joinpath(Path.cwd(),'data','unemployment.csv'), index = False)
+# df.to_csv(Path.joinpath(Path.cwd(),'data','unemployment.csv'), index = False)
 
