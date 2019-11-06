@@ -44,7 +44,7 @@ def getFig(value, cols, colors):
         yaxis = go.layout.YAxis(
             tickformat = ',.0%'
         ),
-        title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
+        # title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
         hovermode = 'closest'
     )
     fig = go.Figure(data=data,layout=layout)
