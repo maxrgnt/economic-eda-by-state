@@ -1,5 +1,4 @@
 import dash
-import dash_daq as daq
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
@@ -46,9 +45,7 @@ def getFig(value, cols, colors):
             tickformat = ',.0%'
         ),
         title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
-        hovermode = 'closest',
-        # paper_bgcolor = bgColor,
-        # plot_bgcolor = bgColor
+        hovermode = 'closest'
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
