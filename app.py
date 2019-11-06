@@ -1,4 +1,5 @@
 import dash
+import dash_daq as daq
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
@@ -10,7 +11,7 @@ import pandas as pd
 tabtitle = 'Border Crossing v. GDP'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
-bgColor = '#D3D3D3'
+bgColor = '#111111'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
@@ -33,6 +34,7 @@ def getFig(value, cols, colors):
         )
         data.append(trace)
     layout = go.Layout(
+        template = "plotly_dark",
         autosize = True,
         showlegend = True,
         xaxis = go.layout.XAxis(
@@ -45,18 +47,19 @@ def getFig(value, cols, colors):
         ),
         title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
         hovermode = 'closest',
-        paper_bgcolor = bgColor,
-        plot_bgcolor = bgColor
+        # paper_bgcolor = bgColor,
+        # plot_bgcolor = bgColor
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
 
 ########### Initiate the app
 external_stylesheets = [
-    'https://codepen.io/chriddyp/pen/bWLwgP.css'
-    # 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/nomargin.css'
+    'https://codepen.io/chriddyp/pen/bWLwgP.css',
+    'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/nomargin.css'
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
 server = app.server
 app.title=tabtitle
 
@@ -77,12 +80,20 @@ app.layout = html.Div(children=[
                 labelStyle={'display': 'inline-block'},
                 value=borders[0]
             ),
-            html.Br(),
+        ],
+        style={'width': '24%', 'color': 'lightgray'},
+        className = "twelve columns"),
+    ], className = "row"),
+#
+    html.Br(),
+#
+    html.Div([
+        html.Div([
             dcc.Dropdown(id='dropDown',
                 options=[{'label': i, 'value': i} for i in cols]
             ),
         ],
-        style={'width': '24%'},
+        style={'width': '24%', 'color': bgColor},
         className = "twelve columns"),
     ], className = "row"),
 #
@@ -111,6 +122,7 @@ app.layout = html.Div(children=[
     ],
     style = {
             'backgroundColor': bgColor,
+            'color': 'lightgray'
             }
 )
 
