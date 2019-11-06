@@ -14,14 +14,14 @@ bgColor = '#111111'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
-cols = list(df['Abrv'].unique())
+cols = list(df['State'].unique())
 borders = list(df['US_Border'].unique())
 
 pagetitle = f'Border Crossing v. GDP from {df["Year"].min()} to {df["Year"].max()}'
 
 ########### Figure
 def getFig(value, cols, colors):
-    figDF = df[df['Abrv']==value]
+    figDF = df[df['State']==value]
     data = []
     for i, col in enumerate(cols):
         trace = go.Scatter(
@@ -129,7 +129,7 @@ def updateFigWith(value):
     if value in cols:
         toReturn = value
     else:
-        value = 'TX'
+        value = 'Texas'
     figs = (getFig(value,['gdp','border'],['#586BA4','#CC5803']),
             getFig(value,['labor','unemp'],['#67597A','#963D5A']))
     return figs
@@ -137,7 +137,7 @@ def updateFigWith(value):
 @app.callback([Output('dropDown', 'options')],
              [Input('radio', 'value')])
 def updateDropDownOptions(value):
-    newOptions = list(df[df['US_Border']==value]['Abrv'].unique())
+    newOptions = list(df[df['US_Border']==value]['State'].unique())
     return [[{'label': i, 'value': i} for i in newOptions]]
 
 @app.callback([Output('dropDown', 'value'), Output('dropDown', 'placeholder')],
