@@ -61,10 +61,14 @@ app.title=tabtitle
 ########### Layout
 app.layout = html.Div(children=[
     html.H1(pagetitle),
-    html.Div(children=['labor:  percent change in labor force (percentage of population able to work)']),
-    html.Div(children=['unemp:  percent change in unemployment rate (percentage of labor force not working)']),
-    html.Div(children=['border: percent change in individuals crossing the border']),
-    html.Div(children=['gdp:    percent change in gdp']),
+    html.Div([
+        dcc.Markdown('''
+            * **labor**:  percent change in labor force (percentage of population able to work)
+            * **unemp**:  percent change in unemployment rate (percentage of labor force not working)
+            * **border**: percent change in individuals crossing the border
+            * **gdp**:    percent change in gdp
+            ''')
+    ]),
     html.Br(),
 #
     html.Div([
