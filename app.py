@@ -45,7 +45,8 @@ def getFig(value, cols, colors):
             tickformat = ',.0%'
         ),
         # title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
-        hovermode = 'closest'
+        hovermode = 'closest',
+        margin=go.layout.Margin(l=40, r=0, t=40, b=30)
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
