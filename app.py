@@ -30,8 +30,8 @@ laborCompColors = ['#67597A','#963D5A']
 cols = list(df['State'].unique())
 borders = list(df['US_Border'].unique())
 
-pagetitle = f'Immigration, Unemployment, and GDP by State'
-pagesubtitle = f'[ from {df["Year"].min()} to {df["Year"].max()} ]'
+pagetitle = f' Immigration, Unemployment, and GDP by State'
+pagesubtitle = f' [ from {df["Year"].min()} to {df["Year"].max()} ]'
 
 ########### Figure
 def getFig(value, cols, colors):
@@ -107,7 +107,7 @@ app.layout = html.Div(children=[
                 id = 'radio',
                 options=[{'label': i, 'value': i} for i in borders],
                 labelStyle={'display': 'inline-block', 'color': textColor},
-                inputStyle={"margin-right": "50px"},
+                inputStyle={"margin-right": "30px"},
                 value=borders[0]
             ),
         ],
