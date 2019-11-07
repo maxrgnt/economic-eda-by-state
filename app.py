@@ -50,6 +50,7 @@ def getFig(value, cols, colors):
         template = "plotly_dark",
         autosize = True,
         showlegend = True,
+        legend={'x': 1, 'y': 1},
         xaxis = go.layout.XAxis(
             title = 'Year',
             tickmode = 'linear',
