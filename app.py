@@ -91,15 +91,6 @@ app.layout = html.Div(children=[
     html.Br(),
     html.H2(pagetitle),
     html.H4(pagesubtitle),
-# Guide - alt + space to get 'hard' space below
-    html.Div([
-        dcc.Markdown('''
-            * **LaborRate**:                    Δ % of population able to work
-            * **UnemploymentRate**:    Δ % of labor force not working
-            * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
-            * **GDP**:                              Δ gross domestic product
-            ''')
-    ]),
     html.Br(),
 # Radio Buttons
     html.Div([
@@ -143,6 +134,16 @@ app.layout = html.Div(children=[
             style={'width': '47%'},#, 'height': 150},
             className = "six columns"),
     ], className = "row"),
+    html.Br(),
+# Guide - alt + space to get 'hard' space below
+    html.Div([
+        dcc.Markdown('''
+            * **LaborRate**:                    Δ % of population able to work
+            * **UnemploymentRate**:    Δ % of labor force not working
+            * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
+            * **GDP**:                              Δ gross domestic product
+            ''')
+    ]),
     html.Br(),
 # Footer Links
     html.A('Code on Github', href=githublink),
