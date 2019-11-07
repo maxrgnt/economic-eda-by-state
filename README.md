@@ -2,12 +2,12 @@
 Do immigration, unemployment, gdp, and the labor force share similar trends?
 
 ## STEPS:
-1) Saved sources in source data folder
-2) Ran clean.ipynb to clean up dataframes
-3) Exported clean dataframes to new csvs in data folder
-4) Ran eda.ipynb for feature engineering of percent change calculations
-5) Exported master dataframe to new csv in data folder
-6) Referenced relevant pieces of master.csv in the app.py dash app script
+1) Saved source CSVs (links below) in sourceData folder
+2) Ran cleanData.ipynb to prepare CSVs for exploratory data analysis
+3) Exported cleaned CSVs to data folder
+4) Ran EDA.ipynb for feature engineering of percent change calculations
+5) Exported master CSV to data folder
+6) Referenced master CSV in dash app script (app.py)
 
 ## SOURCES:
 ### Inbound Border Crossing by State
