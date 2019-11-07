@@ -1,4 +1,13 @@
 # Immigration, Unemployment, and GDP by State
+Do immigration, unemployment, gdp, and the labor force share similar trends?
+
+## STEPS:
+1) Import source data
+2) Run clean.py
+3) Export to data folder
+4) Run eda.py
+5) Export to data folder
+6) Import master file into dash app
 
 ## SOURCES:
 ### Inbound Border Crossing by State
