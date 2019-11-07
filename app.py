@@ -91,10 +91,10 @@ app.layout = html.Div(children=[
     html.Br(),
     html.H2(pagetitle),
     html.H4(pagesubtitle),
-    html.H7('  LaborRate:                   Δ % of population able to work'),
-    html.H7('  UnemploymentRate:    Δ % of labor force not working'),
-    html.H7('  Immigration:                 Δ inbound border crossing *not necessarily permanent*'),
-    html.H7('  GDP:                            Δ gross domestic product'),
+    html.Div(children=['  LaborRate:                   Δ % of population able to work']),
+    html.Div(children=['  UnemploymentRate:    Δ % of labor force not working']),
+    html.Div(children=['  Immigration:                 Δ inbound border crossing *not necessarily permanent*']),
+    html.Div(children=['  GDP:                            Δ gross domestic product']),
 # Guide - alt + space to get 'hard' space below
     html.Div([
         dcc.Markdown('''
