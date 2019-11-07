@@ -7,7 +7,7 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Economic Statistics by State'
+tabtitle = 'Econ Stats by State'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
@@ -48,7 +48,7 @@ def getFig(value, cols, colors):
         data.append(trace)
     layout = go.Layout(
         template = "plotly_dark",
-        autosize = True,
+        autosize = False,
         showlegend = True,
         legend={'x': 0, 'y': 1.1},
         legend_orientation='h',
@@ -66,6 +66,7 @@ def getFig(value, cols, colors):
         title = f'Economic Statistics for {list(figDF["State"].unique())[0]}',
         hovermode = 'closest',
         #margin=go.layout.Margin(l=50, r=50, t=100, b=100, pad= 4),
+        #margin=dict(l=20, r=20, t=20, b=20),
         font=dict(
             family="sans-serif",
             size=14,
@@ -73,6 +74,7 @@ def getFig(value, cols, colors):
         )
     )
     fig = go.Figure(data=data,layout=layout)
+    fig.update_yaxes(automargin=True)
     return fig
 
 ########### Initiate the app
