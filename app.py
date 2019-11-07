@@ -7,10 +7,11 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Economics by State'
+tabtitle = 'Economic Statistics by State'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
+textColor = '#7f7f7f'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
@@ -46,16 +47,24 @@ def getFig(value, cols, colors):
         autosize = True,
         showlegend = True,
         xaxis = go.layout.XAxis(
-           tickmode = 'linear',
-           tick0 = figDF['Year'].min(),
-           dtick = 1
+            title = 'Year',
+            tickmode = 'linear',
+            tick0 = figDF['Year'].min(),
+            dtick = 1,
+            tickangle = 45
         ),
         yaxis = go.layout.YAxis(
+            title = 'Percent Change',
             tickformat = ',.0%'
         ),
-        # title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
+        title = f'Economic Statistics for {list(figDF["State"].unique())[0]}',
         hovermode = 'closest',
-        margin=go.layout.Margin(l=20, r=0, t=0, b=20)
+        margin=go.layout.Margin(l=50, r=50, t=100, b=100, pad= 4),
+        font=dict(
+            family="sans-serif",
+            size=14,
+            color=textColor
+        )
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
@@ -89,7 +98,8 @@ app.layout = html.Div(children=[
             dcc.RadioItems(
                 id = 'radio',
                 options=[{'label': i, 'value': i} for i in borders],
-                labelStyle={'display': 'inline-block'},
+                labelStyle={'display': 'inline-block', 'color': textColor},
+                inputStyle={"margin-right": "50px"},
                 value=borders[0]
             ),
         ],
@@ -114,14 +124,14 @@ app.layout = html.Div(children=[
             dcc.Graph(
                 id='popByState',
             ),
-            style={'width': '46%'},
+            style={'width': '47%'},
             className = "six columns"
         ),
         html.Div(
             dcc.Graph(
                 id='gdpByState',
             ),
-            style={'width': '46%'},#, 'height': 150},
+            style={'width': '47%'},#, 'height': 150},
             className = "six columns"),
     ], className = "row"),
     html.Br(),
@@ -132,7 +142,7 @@ app.layout = html.Div(children=[
     ],
     style = {
             'backgroundColor': bgColor,
-            'color': 'lightgray'
+            'color': textColor
             }
 )
 
