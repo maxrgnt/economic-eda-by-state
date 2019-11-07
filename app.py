@@ -98,12 +98,12 @@ app.layout = html.Div(children=[
             dcc.RadioItems(
                 id = 'radio',
                 options=[{'label': i, 'value': i} for i in borders],
-                labelStyle={'display': 'inline-block', 'color': textColor},
+                labelStyle={'color': textColor},
                 inputStyle={"margin-right": "30px"},
                 value=borders[0]
             ),
         ],
-        style={'width': '24%', 'color': 'lightgray'},
+        style={'width': '24%', 'color': textColor},
         className = "six columns"),
         html.Div([
             dcc.Dropdown(id='dropDown',
