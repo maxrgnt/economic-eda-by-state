@@ -1,4 +1,4 @@
-# Inbound Border Crossing v. GDP & Unemployment
+# Immigration, Unemployment, and GDP by State
 
 ## SOURCES:
 ### Inbound Border Crossing by State
