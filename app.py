@@ -63,7 +63,7 @@ def getFig(value, cols, colors):
         ),
         title = f'Economic Statistics for {list(figDF["State"].unique())[0]}',
         hovermode = 'closest',
-        margin=go.layout.Margin(l=50, r=50, t=100, b=100, pad= 4),
+        #margin=go.layout.Margin(l=50, r=50, t=100, b=100, pad= 4),
         font=dict(
             family="sans-serif",
             size=14,
