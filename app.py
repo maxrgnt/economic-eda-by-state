@@ -7,17 +7,26 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Border Crossing v. GDP'
+tabtitle = 'Economics by State'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
+
+# Updating column  names to be more 'telling'
+df.rename(columns={'gdp':'GDP','labor':'LaborRate','unemp':'UnemploymentRate','border':'Immigration'}, inplace=True)
+gdpComp = ['GDP','Immigration']
+gdpCompColors = ['#586BA4','#CC5803']
+laborComp = ['LaborRate','UnemploymentRate']
+laborCompColors = ['#67597A','#963D5A']
+
 cols = list(df['State'].unique())
 borders = list(df['US_Border'].unique())
 
-pagetitle = f'Border Crossing v. GDP from {df["Year"].min()} to {df["Year"].max()}'
+pagetitle = f'Immigration, Unemployment, and GDP by State'
+pagesubtitle = f'[ from {df["Year"].min()} to {df["Year"].max()} ]'
 
 ########### Figure
 def getFig(value, cols, colors):
@@ -46,7 +55,7 @@ def getFig(value, cols, colors):
         ),
         # title = f'{list(figDF["State"].unique())[0]} Percent Change by Year',
         hovermode = 'closest',
-        margin=go.layout.Margin(l=10, r=0, t=0, b=10)
+        margin=go.layout.Margin(l=20, r=0, t=0, b=20)
     )
     fig = go.Figure(data=data,layout=layout)
     return fig
@@ -61,17 +70,20 @@ app.title=tabtitle
 
 ########### Layout
 app.layout = html.Div(children=[
-    html.H1(pagetitle),
+# Header
+    html.H2(pagetitle),
+    html.H4(pagesubtitle),
+# Guide - alt + space to get 'hard' space below
     html.Div([
         dcc.Markdown('''
-            * **labor**:  percent change in labor force (percentage of population able to work)
-            * **unemp**:  percent change in unemployment rate (percentage of labor force not working)
-            * **border**: percent change in individuals crossing the border
-            * **gdp**:    percent change in gdp
+             * **LaborRate**:                    Δ % of population able to work
+             * **UnemploymentRate**:    Δ % of labor force not working
+             * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
+             * **GDP**:                              Δ gross domestic product
             ''')
     ]),
     html.Br(),
-#
+# Radio Buttons
     html.Div([
         html.Div([
             dcc.RadioItems(
@@ -84,9 +96,8 @@ app.layout = html.Div(children=[
         style={'width': '24%', 'color': 'lightgray'},
         className = "twelve columns"),
     ], className = "row"),
-#
     html.Br(),
-#
+# Drop Down
     html.Div([
         html.Div([
             dcc.Dropdown(id='dropDown',
@@ -96,9 +107,8 @@ app.layout = html.Div(children=[
         style={'width': '24%', 'color': bgColor},
         className = "twelve columns"),
     ], className = "row"),
-#
     html.Br(),
-#
+# Graphs
     html.Div([
         html.Div(
             dcc.Graph(
@@ -114,8 +124,8 @@ app.layout = html.Div(children=[
             style={'width': '46%'},#, 'height': 150},
             className = "six columns"),
     ], className = "row"),
-#
     html.Br(),
+# Footer Links
     html.A('Code on Github', href=githublink),
     html.Br(),
     html.A("Data Source", href=sourceurl),
@@ -135,8 +145,8 @@ def updateFigWith(value):
         toReturn = value
     else:
         value = 'Texas'
-    figs = (getFig(value,['gdp','border'],['#586BA4','#CC5803']),
-            getFig(value,['labor','unemp'],['#67597A','#963D5A']))
+    figs = (getFig(value,gdpComp,gdpCompColors),
+            getFig(value,laborComp,laborCompColors))
     return figs
 
 @app.callback([Output('dropDown', 'options')],
