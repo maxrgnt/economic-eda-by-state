@@ -33,15 +33,15 @@ tab_layout = html.Div([
                     value=borders[0]
                 ),
             ],
-            style={'width': '24%', 'color': textColor},
-            className = "six columns"),
+            style={'width': '20%', 'color': textColor},
+            className = "nine columns"),
             html.Div([
                 dcc.Dropdown(id='dropDown',
                     options=[{'label': i, 'value': i} for i in cols]
                 ),
             ],
             style={'width': '24%', 'color': bgColor},
-            className = "six columns"),
+            className = "nine columns"),
         ], className = "row"),
         html.Br(),
         # Graphs
@@ -64,10 +64,10 @@ tab_layout = html.Div([
         # Guide - alt + space to get 'hard' space below
         html.Div([
             dcc.Markdown('''
-                * **LaborRate**:                    Δ % of population able to work
-                * **UnemploymentRate**:    Δ % of labor force not working
-                * **Immigration**:                 Δ inbound border crossing (*not necessarily permanent*)
-                * **GDP**:                              Δ gross domestic product
+                *  **LaborRate**:                     Δ % of population able to work
+                *  **UnemploymentRate**:     Δ % of labor force not working
+                *  **Immigration**:                  Δ inbound border crossing (*not necessarily permanent*)
+                *  **GDP**:                               Δ gross domestic product
                 ''')
         ]),
         html.Br(),

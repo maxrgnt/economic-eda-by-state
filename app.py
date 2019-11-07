@@ -153,55 +153,6 @@ app.layout = html.Div(children=[
         html.Div(id='tab-content'),
     ], className='twelve columns',
         style={'marginBottom': 50, 'marginTop': 25}),
-# # Radio Buttons / Drop Down
-#     html.Div([
-#         html.Div([
-#             dcc.RadioItems(
-#                 id = 'radio',
-#                 options=[{'label': i, 'value': i} for i in borders],
-#                 labelStyle={'color': textColor},
-#                 inputStyle={"margin-right": "30px"},
-#                 value=borders[0]
-#             ),
-#         ],
-#         style={'width': '24%', 'color': textColor},
-#         className = "six columns"),
-#         html.Div([
-#             dcc.Dropdown(id='dropDown',
-#                 options=[{'label': i, 'value': i} for i in cols]
-#             ),
-#         ],
-#         style={'width': '24%', 'color': bgColor},
-#         className = "six columns"),
-#     ], className = "row"),
-#     html.Br(),
-# # Graphs
-#     html.Div([
-#         html.Div(
-#             dcc.Graph(
-#                 id='popByState',
-#             ),
-#             style={'width': '47%'},
-#             className = "six columns"
-#         ),
-#         html.Div(
-#             dcc.Graph(
-#                 id='gdpByState',
-#             ),
-#             style={'width': '47%'},#, 'height': 150},
-#             className = "six columns"),
-#     ], className = "row"),
-#     html.Br(),
-# # Guide - alt + space to get 'hard' space below
-#     html.Div([
-#         dcc.Markdown('''
-#             * **LaborRate**:                    Δ % of population able to work
-#             * **UnemploymentRate**:    Δ % of labor force not working
-#             * **Immigration**:                 Δ inbound border crossing (*not necessarily permanent*)
-#             * **GDP**:                              Δ gross domestic product
-#             ''')
-#     ]),
-#     html.Br(),
 # Footer Links
     html.A('Code on Github', href=githublink),
     html.Br(),

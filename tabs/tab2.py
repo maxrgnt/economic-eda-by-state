@@ -28,7 +28,7 @@ tab_layout = html.Div([
                         2013 : {'label': '2013', 'style': {'color': textColor}},
                         2018 : {'label': '2018', 'style': {'color': textColor}}}
             )
-        ]),
+        ], className='nine columns'),
         html.Br(),
         html.Br(),
         dcc.Graph(
@@ -36,4 +36,4 @@ tab_layout = html.Div([
         ),
         html.Br(),
     ], className='nine columns'),
-], className='nine columns')
+], className='row')
