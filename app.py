@@ -104,20 +104,27 @@ app.layout = html.Div(children=[
             ),
         ],
         style={'width': '24%', 'color': 'lightgray'},
-        className = "twelve columns"),
-    ], className = "row"),
-    html.Br(),
-# Drop Down
-    html.Div([
+        className = "six columns"),
         html.Div([
             dcc.Dropdown(id='dropDown',
                 options=[{'label': i, 'value': i} for i in cols]
             ),
         ],
         style={'width': '24%', 'color': bgColor},
-        className = "twelve columns"),
+        className = "six columns"),
     ], className = "row"),
     html.Br(),
+# Drop Down
+#     html.Div([
+#         html.Div([
+#             dcc.Dropdown(id='dropDown',
+#                 options=[{'label': i, 'value': i} for i in cols]
+#             ),
+#         ],
+#         style={'width': '24%', 'color': bgColor},
+#         className = "twelve columns"),
+#     ], className = "row"),
+#     html.Br(),
 # Graphs
     html.Div([
         html.Div(
