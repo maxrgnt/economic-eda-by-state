@@ -51,6 +51,7 @@ def getFig(value, cols, colors):
         autosize = True,
         showlegend = True,
         legend={'x': 0, 'y': 1.2},
+        legend_orientation='h',
         xaxis = go.layout.XAxis(
             title = 'Year',
             tickmode = 'linear',
