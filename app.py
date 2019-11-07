@@ -7,7 +7,7 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Economic Exploration'
+tabtitle = 'Economic EDA 🔍'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
@@ -30,8 +30,8 @@ laborCompColors = ['#67597A','#963D5A']
 cols = list(df['State'].unique())
 borders = list(df['US_Border'].unique())
 
-pagetitle = f' Immigration, Unemployment, and GDP by State'
-pagesubtitle = f' [ from {df["Year"].min()} to {df["Year"].max()} ]'
+pagetitle = f'  Immigration, Unemployment, and GDP by State'
+pagesubtitle = f'  [ from {df["Year"].min()} to {df["Year"].max()} ]'
 
 ########### Figure
 def getFig(value, cols, colors):
