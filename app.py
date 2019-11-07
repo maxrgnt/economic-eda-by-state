@@ -7,7 +7,7 @@ import pandas as pd
 
 ########### Define a few variables ######
 
-tabtitle = 'Econ Stats by State'
+tabtitle = 'Economic Exploration'
 sourceurl = 'https://github.com/maxrgnt/pythdc2-project2/blob/master/README.md'
 githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
@@ -63,7 +63,7 @@ def getFig(value, cols, colors):
             title = 'Percent Change',
             tickformat = ',.0%'
         ),
-        title = f'Economic Statistics for {list(figDF["State"].unique())[0]}',
+        title = f'{list(figDF["State"].unique())[0]} Statistics',
         hovermode = 'closest',
         #margin=go.layout.Margin(l=50, r=50, t=100, b=100, pad= 4),
         #margin=dict(l=20, r=20, t=20, b=20),
