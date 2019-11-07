@@ -55,7 +55,7 @@ def getFig(value, cols, colors):
             tickmode = 'linear',
             tick0 = figDF['Year'].min(),
             dtick = 1,
-            tickangle = 45
+            tickangle = 60
         ),
         yaxis = go.layout.YAxis(
             title = 'Percent Change',
