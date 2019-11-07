@@ -47,6 +47,7 @@ def getFig(value, cols, colors):
         )
         data.append(trace)
     layout = go.Layout(
+        config={'displayModeBar': False},
         template = "plotly_dark",
         autosize = False,
         showlegend = True,
