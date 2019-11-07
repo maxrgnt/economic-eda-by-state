@@ -13,6 +13,10 @@ githublink = 'https://github.com/maxrgnt/pythdc2-project2'
 bgColor = '#111111'
 textColor = '#7f7f7f'
 
+BEA = 'BEA.png'
+BLS = 'BLS.png_r=100'
+BTS = 'BTS.jpg'
+
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
 
@@ -79,7 +83,7 @@ app.title=tabtitle
 
 ########### Layout
 app.layout = html.Div(children=[
-# Header
+    html.Br(),
     html.H2(pagetitle),
     html.H4(pagesubtitle),
 # Guide - alt + space to get 'hard' space below
@@ -139,6 +143,15 @@ app.layout = html.Div(children=[
     html.A('Code on Github', href=githublink),
     html.Br(),
     html.A("Data Source", href=sourceurl),
+    html.Br(),
+# Source Pics
+    html.Br(),
+    html.Div([
+        html.Img(src=app.get_asset_url(BEA), style={'width': '10%', 'height': '10%'}),
+        html.Img(src=app.get_asset_url(BLS), style={'width': '10%', 'height': '10%'}),
+        html.Img(src=app.get_asset_url(BTS), style={'width': '10%', 'height': '10%'})
+    ]),
+    html.Br(),
     ],
     style = {
             'backgroundColor': bgColor,
