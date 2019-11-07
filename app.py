@@ -47,7 +47,7 @@ def getFig(value, cols, colors):
         )
         data.append(trace)
     layout = go.Layout(
-        config={'displayModeBar': False},
+        #config={'displayModeBar': False},
         template = "plotly_dark",
         autosize = False,
         showlegend = True,
@@ -91,6 +91,10 @@ app.layout = html.Div(children=[
     html.Br(),
     html.H2(pagetitle),
     html.H4(pagesubtitle),
+    html.H6('  **LaborRate**:                    Δ % of population able to work'),
+    html.H6('  **UnemploymentRate**:    Δ % of labor force not working'),
+    html.H6('  **Immigration**:                 Δ inbound border crossing *not necessarily permanent*'),
+    html.H6('  **GDP**:                              Δ gross domestic product'),
 # Guide - alt + space to get 'hard' space below
     html.Div([
         dcc.Markdown('''
