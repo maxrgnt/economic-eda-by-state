@@ -30,7 +30,7 @@ laborCompColors = ['#67597A','#963D5A']
 cols = list(df['State'].unique())
 borders = list(df['US_Border'].unique())
 
-pagetitle = f'  Immigration, Unemployment, and GDP by State'
+pagetitle = f' Immigration, Unemployment, and GDP by State'
 pagesubtitle = f'  [ from {df["Year"].min()} to {df["Year"].max()} ]'
 
 ########### Figure
