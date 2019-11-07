@@ -1,5 +1,5 @@
 State,Abrv,Year,Value
-Alaska,AL,1997,3.2
+Alaska,AK,1997,3.2
 Arizona,AZ,1997,8.2
 California,CA,1997,7.6
 Idaho,ID,1997,4.8
@@ -13,7 +13,7 @@ North Dakota,ND,1997,0.1
 Texas,TX,1997,10.1
 Vermont,VT,1997,5.8
 Washington,WA,1997,7.9
-Alaska,AL,1998,-6.1
+Alaska,AK,1998,-6.1
 Arizona,AZ,1998,8.3
 California,CA,1998,7.2
 Idaho,ID,1998,5.2
@@ -27,7 +27,7 @@ North Dakota,ND,1998,6.8
 Texas,TX,1998,5.8
 Vermont,VT,1998,4.3
 Washington,WA,1998,8.4
-Alaska,AL,1999,2.3
+Alaska,AK,1999,2.3
 Arizona,AZ,1999,8.3
 California,CA,1999,8.6
 Idaho,ID,1999,10.2
@@ -41,7 +41,7 @@ North Dakota,ND,1999,1.1
 Texas,TX,1999,5.5
 Vermont,VT,1999,6.8
 Washington,WA,1999,9.7
-Alaska,AL,2000,8.3
+Alaska,AK,2000,8.3
 Arizona,AZ,2000,6.0
 California,CA,2000,9.6
 Idaho,ID,2000,11.3
@@ -55,7 +55,7 @@ North Dakota,ND,2000,5.8
 Texas,TX,2000,8.4
 Vermont,VT,2000,6.7
 Washington,WA,2000,3.2
-Alaska,AL,2001,6.1
+Alaska,AK,2001,6.1
 Arizona,AZ,2001,4.2
 California,CA,2001,1.3
 Idaho,ID,2001,-1.6
@@ -69,7 +69,7 @@ North Dakota,ND,2001,5.2
 Texas,TX,2001,4.6
 Vermont,VT,2001,5.3
 Washington,WA,2001,0.7
-Alaska,AL,2002,4.2
+Alaska,AK,2002,4.2
 Arizona,AZ,2002,4.6
 California,CA,2002,3.8
 Idaho,ID,2002,3.6
@@ -83,7 +83,7 @@ North Dakota,ND,2002,6.8
 Texas,TX,2002,1.8
 Vermont,VT,2002,4.6
 Washington,WA,2002,3.7
-Alaska,AL,2003,7.4
+Alaska,AK,2003,7.4
 Arizona,AZ,2003,7.4
 California,CA,2003,6.3
 Idaho,ID,2003,4.2
@@ -97,7 +97,7 @@ North Dakota,ND,2003,9.2
 Texas,TX,2003,5.4
 Vermont,VT,2003,4.8
 Washington,WA,2003,4.1
-Alaska,AL,2004,10.0
+Alaska,AK,2004,10.0
 Arizona,AZ,2004,6.6
 California,CA,2004,6.9
 Idaho,ID,2004,8.4
@@ -111,7 +111,7 @@ North Dakota,ND,2004,4.9
 Texas,TX,2004,9.2
 Vermont,VT,2004,7.3
 Washington,WA,2004,4.6
-Alaska,AL,2005,13.7
+Alaska,AK,2005,13.7
 Arizona,AZ,2005,11.1
 California,CA,2005,7.5
 Idaho,ID,2005,9.7
@@ -125,7 +125,7 @@ North Dakota,ND,2005,5.4
 Texas,TX,2005,8.8
 Vermont,VT,2005,3.7
 Washington,WA,2005,9.6
-Alaska,AL,2006,11.7
+Alaska,AK,2006,11.7
 Arizona,AZ,2006,8.8
 California,CA,2006,6.9
 Idaho,ID,2006,6.3
@@ -139,7 +139,7 @@ North Dakota,ND,2006,7.0
 Texas,TX,2006,10.0
 Vermont,VT,2006,3.4
 Washington,WA,2006,7.1
-Alaska,AL,2007,10.2
+Alaska,AK,2007,10.2
 Arizona,AZ,2007,5.7
 California,CA,2007,4.3
 Idaho,ID,2007,5.6
@@ -153,7 +153,7 @@ North Dakota,ND,2007,9.8
 Texas,TX,2007,8.6
 Vermont,VT,2007,1.6
 Washington,WA,2007,9.2
-Alaska,AL,2008,11.8
+Alaska,AK,2008,11.8
 Arizona,AZ,2008,-1.1
 California,CA,2008,1.8
 Idaho,ID,2008,3.1
@@ -167,7 +167,7 @@ North Dakota,ND,2008,10.6
 Texas,TX,2008,5.0
 Vermont,VT,2008,4.0
 Washington,WA,2008,2.7
-Alaska,AL,2009,-9.4
+Alaska,AK,2009,-9.4
 Arizona,AZ,2009,-6.0
 California,CA,2009,-3.5
 Idaho,ID,2009,-3.2
@@ -181,7 +181,7 @@ North Dakota,ND,2009,0.9
 Texas,TX,2009,-6.0
 Vermont,VT,2009,0.7
 Washington,WA,2009,-0.6
-Alaska,AL,2010,6.6
+Alaska,AK,2010,6.6
 Arizona,AZ,2010,1.8
 California,CA,2010,2.8
 Idaho,ID,2010,2.6
@@ -195,7 +195,7 @@ North Dakota,ND,2010,10.7
 Texas,TX,2010,6.3
 Vermont,VT,2010,4.8
 Washington,WA,2010,3.4
-Alaska,AL,2011,6.4
+Alaska,AK,2011,6.4
 Arizona,AZ,2011,3.9
 California,CA,2011,3.8
 Idaho,ID,2011,2.4
@@ -209,7 +209,7 @@ North Dakota,ND,2011,16.2
 Texas,TX,2011,7.6
 Vermont,VT,2011,3.8
 Washington,WA,2011,3.8
-Alaska,AL,2012,2.5
+Alaska,AK,2012,2.5
 Arizona,AZ,2012,4.0
 California,CA,2012,4.6
 Idaho,ID,2012,2.3
@@ -223,7 +223,7 @@ North Dakota,ND,2012,24.7
 Texas,TX,2012,6.0
 Vermont,VT,2012,2.7
 Washington,WA,2012,5.6
-Alaska,AL,2013,-1.8
+Alaska,AK,2013,-1.8
 Arizona,AZ,2013,2.6
 California,CA,2013,5.5
 Idaho,ID,2013,5.6
@@ -237,7 +237,7 @@ North Dakota,ND,2013,4.9
 Texas,TX,2013,6.4
 Vermont,VT,2013,0.7
 Washington,WA,2013,4.6
-Alaska,AL,2014,-1.9
+Alaska,AK,2014,-1.9
 Arizona,AZ,2014,3.4
 California,CA,2014,5.9
 Idaho,ID,2014,4.3
@@ -251,7 +251,7 @@ North Dakota,ND,2014,8.7
 Texas,TX,2014,4.2
 Vermont,VT,2014,2.1
 Washington,WA,2014,5.5
-Alaska,AL,2015,-8.9
+Alaska,AK,2015,-8.9
 Arizona,AZ,2015,4.4
 California,CA,2015,6.7
 Idaho,ID,2015,4.3
@@ -265,7 +265,7 @@ North Dakota,ND,2015,-6.2
 Texas,TX,2015,0.2
 Vermont,VT,2015,3.3
 Washington,WA,2015,6.4
-Alaska,AL,2016,-2.3
+Alaska,AK,2016,-2.3
 Arizona,AZ,2016,4.8
 California,CA,2016,4.1
 Idaho,ID,2016,4.5
@@ -279,7 +279,7 @@ North Dakota,ND,2016,-7.6
 Texas,TX,2016,-0.2
 Vermont,VT,2016,3.0
 Washington,WA,2016,4.8
-Alaska,AL,2017,4.6
+Alaska,AK,2017,4.6
 Arizona,AZ,2017,4.9
 California,CA,2017,5.5
 Idaho,ID,2017,4.5
@@ -293,7 +293,7 @@ North Dakota,ND,2017,1.7
 Texas,TX,2017,5.8
 Vermont,VT,2017,3.1
 Washington,WA,2017,6.0
-Alaska,AL,2018,4.5
+Alaska,AK,2018,4.5
 Arizona,AZ,2018,6.2
 California,CA,2018,5.6
 Idaho,ID,2018,6.3

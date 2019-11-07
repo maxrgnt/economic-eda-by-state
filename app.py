@@ -4,6 +4,8 @@ import dash_html_components as html
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
 import pandas as pd
+from tabs import tab1
+from tabs import tab2
 
 ########### Define a few variables ######
 
@@ -19,6 +21,9 @@ BTS = 'BTS.jpg'
 
 url = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/master.csv'
 df = pd.read_csv(url)
+
+url2 = 'https://raw.githubusercontent.com/maxrgnt/pythdc2-project2/master/data/borderCrossing.csv'
+choro_df = pd.read_csv(url2)
 
 # Updating column  names to be more 'telling'
 df.rename(columns={'gdp':'GDP','labor':'LaborRate','unemp':'UnemploymentRate','border':'Immigration'}, inplace=True)
@@ -78,6 +83,25 @@ def getFig(value, cols, colors):
     fig.update_yaxes(automargin=True)
     return fig
 
+def getChoro(year):
+    thisYear = choro_df[choro_df['Year']==year].groupby('Abrv')[['Value']].sum().reset_index()
+    fig = go.Figure(data=go.Choropleth(
+        locations=thisYear['Abrv'], # Spatial coordinates
+        z = thisYear['Value'].astype(float), # Data to be color-coded
+        locationmode = 'USA-states', # set of locations match entries in `locations`
+        colorscale = 'Purples',
+        colorbar_title = 'People',
+        )
+    )
+    fig.update_layout(
+        template = "plotly_dark",
+        title_text = f'Immigration Data for {year}',
+        geo_scope='usa',
+        width=1200,
+        height=600
+    )
+    return fig
+
 ########### Initiate the app
 external_stylesheets = [
     'https://codepen.io/chriddyp/pen/bWLwgP.css'
@@ -85,6 +109,25 @@ external_stylesheets = [
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.title=tabtitle
+app.config.suppress_callback_exceptions = True
+
+tabs_styles = {
+    'height': '44px'
+}
+
+tab_style = {
+    'borderBottom': '1px solid #d6d6d6',
+    'padding': '6px',
+    'fontWeight': 'bold'
+}
+
+tab_selected_style = {
+    'borderTop': f'1px solid {textColor}',
+    'borderBottom': f'1px solid {textColor}',
+    'backgroundColor': textColor,
+    'color': bgColor,
+    'padding': '6px'
+}
 
 ########### Layout
 app.layout = html.Div(children=[
@@ -92,55 +135,73 @@ app.layout = html.Div(children=[
     html.H2(pagetitle),
     html.H4(pagesubtitle),
     html.Br(),
-# Radio Buttons / Drop Down
     html.Div([
-        html.Div([
-            dcc.RadioItems(
-                id = 'radio',
-                options=[{'label': i, 'value': i} for i in borders],
-                labelStyle={'color': textColor},
-                inputStyle={"margin-right": "30px"},
-                value=borders[0]
-            ),
-        ],
-        style={'width': '24%', 'color': textColor},
-        className = "six columns"),
-        html.Div([
-            dcc.Dropdown(id='dropDown',
-                options=[{'label': i, 'value': i} for i in cols]
-            ),
-        ],
-        style={'width': '24%', 'color': bgColor},
-        className = "six columns"),
-    ], className = "row"),
-    html.Br(),
-# Graphs
-    html.Div([
-        html.Div(
-            dcc.Graph(
-                id='popByState',
-            ),
-            style={'width': '47%'},
-            className = "six columns"
-        ),
-        html.Div(
-            dcc.Graph(
-                id='gdpByState',
-            ),
-            style={'width': '47%'},#, 'height': 150},
-            className = "six columns"),
-    ], className = "row"),
-    html.Br(),
-# Guide - alt + space to get 'hard' space below
-    html.Div([
-        dcc.Markdown('''
-            * **LaborRate**:                    Δ % of population able to work
-            * **UnemploymentRate**:    Δ % of labor force not working
-            * **Immigration**:                 Δ inbound border crossing (*not necessarily permanent*)
-            * **GDP**:                              Δ gross domestic product
-            ''')
+        dcc.Tabs(id='tab', value = 'tab1',
+            children=[
+                dcc.Tab(label = 'Compare Percent Change by State', value = 'tab1', style=tab_style, selected_style=tab_selected_style),
+                dcc.Tab(label = 'Track Immigration Over Time', value = 'tab2', style=tab_style, selected_style=tab_selected_style)
+            ],
+            colors={
+                "border": textColor,
+                "primary": bgColor,
+                "background": bgColor
+            },
+            style = tabs_styles
+        )
     ]),
-    html.Br(),
+    html.Div([
+        html.Div(id='tab-content'),
+    ], className='twelve columns',
+        style={'marginBottom': 50, 'marginTop': 25}),
+# # Radio Buttons / Drop Down
+#     html.Div([
+#         html.Div([
+#             dcc.RadioItems(
+#                 id = 'radio',
+#                 options=[{'label': i, 'value': i} for i in borders],
+#                 labelStyle={'color': textColor},
+#                 inputStyle={"margin-right": "30px"},
+#                 value=borders[0]
+#             ),
+#         ],
+#         style={'width': '24%', 'color': textColor},
+#         className = "six columns"),
+#         html.Div([
+#             dcc.Dropdown(id='dropDown',
+#                 options=[{'label': i, 'value': i} for i in cols]
+#             ),
+#         ],
+#         style={'width': '24%', 'color': bgColor},
+#         className = "six columns"),
+#     ], className = "row"),
+#     html.Br(),
+# # Graphs
+#     html.Div([
+#         html.Div(
+#             dcc.Graph(
+#                 id='popByState',
+#             ),
+#             style={'width': '47%'},
+#             className = "six columns"
+#         ),
+#         html.Div(
+#             dcc.Graph(
+#                 id='gdpByState',
+#             ),
+#             style={'width': '47%'},#, 'height': 150},
+#             className = "six columns"),
+#     ], className = "row"),
+#     html.Br(),
+# # Guide - alt + space to get 'hard' space below
+#     html.Div([
+#         dcc.Markdown('''
+#             * **LaborRate**:                    Δ % of population able to work
+#             * **UnemploymentRate**:    Δ % of labor force not working
+#             * **Immigration**:                 Δ inbound border crossing (*not necessarily permanent*)
+#             * **GDP**:                              Δ gross domestic product
+#             ''')
+#     ]),
+#     html.Br(),
 # Footer Links
     html.A('Code on Github', href=githublink),
     html.Br(),
@@ -162,6 +223,14 @@ app.layout = html.Div(children=[
 )
 
 ############ Callbacks
+@app.callback(Output('tab-content','children'),
+            [Input('tab', 'value')])
+def renderTab(tab):
+    if tab == 'tab1':
+        return tab1.tab_layout
+    if tab == 'tab2':
+        return tab2.tab_layout
+
 @app.callback([Output('gdpByState', 'figure'), Output('popByState', 'figure')],
              [Input('dropDown', 'value')])
 def updateFigWith(value):
@@ -184,6 +253,11 @@ def updateDropDownOptions(value):
              [Input('dropDown', 'options')])
 def updateDropDownValue(availableOptions):
     return availableOptions[0]['value'], availableOptions[0]['label']
+
+@app.callback(Output('choropleth', 'figure'),
+             [Input('slider', 'value')])
+def updateDropDownValue(sliderValue):
+    return getChoro(sliderValue)
 
 ############ Deploy
 if __name__ == '__main__':
