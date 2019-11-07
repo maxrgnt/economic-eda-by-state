@@ -94,11 +94,10 @@ app.layout = html.Div(children=[
 # Guide - alt + space to get 'hard' space below
     html.Div([
         dcc.Markdown('''
-             * Hi
-              * **LaborRate**:                    Δ % of population able to work
-              * **UnemploymentRate**:    Δ % of labor force not working
-              * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
-              * **GDP**:                              Δ gross domestic product
+            * **LaborRate**:                    Δ % of population able to work
+            * **UnemploymentRate**:    Δ % of labor force not working
+            * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
+            * **GDP**:                              Δ gross domestic product
             ''')
     ]),
     html.Br(),
