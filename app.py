@@ -92,7 +92,7 @@ app.layout = html.Div(children=[
     html.H2(pagetitle),
     html.H4(pagesubtitle),
     html.Br(),
-# Radio Buttons
+# Radio Buttons / Drop Down
     html.Div([
         html.Div([
             dcc.RadioItems(
@@ -114,17 +114,6 @@ app.layout = html.Div(children=[
         className = "six columns"),
     ], className = "row"),
     html.Br(),
-# Drop Down
-#     html.Div([
-#         html.Div([
-#             dcc.Dropdown(id='dropDown',
-#                 options=[{'label': i, 'value': i} for i in cols]
-#             ),
-#         ],
-#         style={'width': '24%', 'color': bgColor},
-#         className = "twelve columns"),
-#     ], className = "row"),
-#     html.Br(),
 # Graphs
     html.Div([
         html.Div(
@@ -147,7 +136,7 @@ app.layout = html.Div(children=[
         dcc.Markdown('''
             * **LaborRate**:                    Δ % of population able to work
             * **UnemploymentRate**:    Δ % of labor force not working
-            * **Immigration**:                 Δ inbound border crossing *not necessarily permanent*
+            * **Immigration**:                 Δ inbound border crossing (*not necessarily permanent*)
             * **GDP**:                              Δ gross domestic product
             ''')
     ]),
