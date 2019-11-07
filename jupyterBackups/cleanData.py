@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 def abbreviate(stateName):
-    abrvDict = {'Alaska':'AL',
+    abrvDict = {'Alaska':'AK',
                 'Arizona':'AZ',
                 'California':'CA',
                 'Idaho':'ID',
