@@ -1,2 +1,5 @@
+
+*.py linguist-language=python
+
 # mark the files as documentation, so they'll be excluded from language statistics
-.ipynb linguist-documentation
+*.ipynb linguist-documentation
