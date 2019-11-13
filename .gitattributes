@@ -1,4 +1,4 @@
-
+# Example of a `.gitattributes` file which reclassifies `.py` files as Python:
 *.py linguist-language=python
 
 # mark the files as documentation, so they'll be excluded from language statistics
